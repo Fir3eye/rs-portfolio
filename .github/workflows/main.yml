@@ -20,16 +20,15 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: ./  # Specify the directory where package.json exists
 
     - name: Build
-      run: npm run build  # Adjust if your build script is different
+      run: npm run build
+      working-directory: ./  # Specify the directory where package.json exists
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.RS_TOKEN }}
-        publish_dir: ./dist # Directory where your static files are generated
-        publish_branch: gh-pages  # Branch where GitHub Pages content is served from
-        # Optionally configure these settings
-        # allow_empty_commit: true
-        # force_orphan: true
+        publish_dir: ./dist
+        publish_branch: gh-pages
