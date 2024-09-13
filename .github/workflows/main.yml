@@ -27,8 +27,8 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.RS_TOKEN }}
-        publish_dir: ./ # Directory where your static files are generated
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build  # Directory where your static files are generated
         publish_branch: gh-pages  # Branch where GitHub Pages content is served from
         # Optionally configure these settings
         # allow_empty_commit: true
